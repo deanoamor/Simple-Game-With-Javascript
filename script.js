@@ -155,7 +155,6 @@ switch(choosePlace){
 
                 let enemyPowerForest = enemyPowerRandom();
                 let randomNumberForest = randomNumber();
-                console.log(randomNumberForest);
 
                 if(enemyForestHp > 0){
                     if(randomNumberForest > 5){
@@ -164,7 +163,7 @@ switch(choosePlace){
                         characterCreate[select].hp = characterCreate[select].hp - enemyPowerForest;
                         alert(`your hp now ${characterCreate[select].hp}`);
                         console.log(`your hp now ${characterCreate[select].hp}`);
-                        if(characterCreate[select].hp <=50){
+                        if(characterCreate[select].hp < 50){
                             alert(`you are too weak`);
                             let useHealthPotion = parseInt(prompt(`want to use health poison? (1.yes, 2.no)`));
                             if(useHealthPotion === 1){  
@@ -177,8 +176,8 @@ switch(choosePlace){
                                 alert(`you continue to fight`);
                             }
                         }
-                        if(characterCreate[select].energy <=50){
-                            alert(`you are too weak attack because your energy less than 50`);
+                        if(characterCreate[select].energy < 50){
+                            alert(`you are too weak to attack because your energy less than 50`);
                             let useEnergyPotion = parseInt(prompt(`want to use energy poison? (1.yes, 2.no)`));
                             if(useEnergyPotion === 1){
                                 characterCreate[select].healenergy();
